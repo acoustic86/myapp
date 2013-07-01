@@ -1,13 +1,9 @@
 Bute::Application.routes.draw do
-  resources :products
-
-
-  resources :services
-
-
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}  
+  
   resources :profiles
-
-
+  root :to => "profiles#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
